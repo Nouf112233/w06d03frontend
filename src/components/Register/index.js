@@ -11,7 +11,7 @@ function Register() {
   
     const [username, setUserame] = useState("");
     const [email, setEmail] = useState("");
-    const [passward, setPassward] = useState("");
+    const [password, setPassword] = useState("");
     const navigate = useNavigate();
   
     const getAllusers = async () => {
@@ -41,7 +41,7 @@ function Register() {
       else if(x===0)
       
       {
-        axios.post("http://localhost:5000/user", {username:username,email:email,passward:passward})
+        axios.post("http://localhost:5000/user", {username:username,email:email,password:password})
         navigate(`/login`);
         
       }
@@ -80,12 +80,12 @@ function Register() {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="passward">Passward</label>
+              <label htmlFor="password">Password</label>
               <input
-                type="passward"
-                name="passward"
-                placeholder="passward"
-                onChange={(e) => setPassward(e.target.value)}
+                type="password"
+                name="password"
+                placeholder="password"
+                onChange={(e) => setPassword(e.target.value)}
                 required
               />
             </div>

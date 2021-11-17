@@ -6,7 +6,7 @@ import './style.css';
 function Login() {
     const [users, setUsers] = useState([]);
     const [email, setEmail] = useState("");
-    const [passward, setPassward] = useState("");
+    const [password, setPassword] = useState("");
    
     const navigate = useNavigate();
   
@@ -21,7 +21,7 @@ function Login() {
       // eslint-disable-next-line
       users.map((user) => {
         // eslint-disable-next-line
-        if (user.email == email && user.passward == passward) {
+        if (user.email == email && user.password == password) {
           x=1;
           localStorage.setItem("activ",JSON.stringify(user));
         }
@@ -31,7 +31,7 @@ function Login() {
         navigate(`/home`);
       } else if (x===0) {
         let myWindow = window.open("", "", "width=200,height=100");
-        myWindow.document.write("<p>wrong email/passward compination</p>");
+        myWindow.document.write("<p>wrong email/password compination</p>");
         myWindow.focus();
       }
     };
@@ -58,12 +58,12 @@ function Login() {
               />
             </div>
               <div className="form-group">
-                <label htmlFor="passward">Passward</label>
+                <label htmlFor="password">Password</label>
                 <input
-                  type="passward"
-                  name="passward"
-                  placeholder="passward"
-                  onChange={(e) => setPassward(e.target.value)}
+                  type="password"
+                  name="password"
+                  placeholder="password"
+                  onChange={(e) => setPassword(e.target.value)}
                   required
                 />
               </div>
